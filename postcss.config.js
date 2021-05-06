@@ -5,7 +5,6 @@ const postCSSNested = require('postcss-nested')
 const postCssCssVariables = require('postcss-css-variables')()
 const postCSSInlineSVG = require('postcss-inline-svg')()
 
-const postCSSAutoprefixer = autoprefixer({ browsers: ['IE 9', 'iOS 7'] })
 const postCssImport = postCSSImport({
   addDependencyTo: webpack,
 })
@@ -15,7 +14,7 @@ const colorFunction = require('postcss-color-function')
 module.exports = {
   plugins: [
     postCssImport,
-    postCSSAutoprefixer,
+    autoprefixer,
     postCSSNested,
     postCssCssVariables,
     postCSSInlineSVG,

@@ -1,12 +1,12 @@
 const path = require('path')
 
 const webpack = require('webpack') // eslint-disable-line import/no-extraneous-dependencies
-const ExtractTextPlugin = require('extract-text-webpack-plugin') // eslint-disable-line import/no-extraneous-dependencies
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolve = require('./webpack/resolve.js')
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
   entry: ['webpack-hot-middleware/client', './src/index'],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -20,7 +20,9 @@ module.exports = {
         NODE_ENV: JSON.stringify('development'),
       },
     }),
-    new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    })
   ],
   resolve,
   module: {
@@ -33,38 +35,32 @@ module.exports = {
       {
         test: /\.css$/,
         include: /node_modules/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: false,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-              },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
             },
-          ],
-        }),
+          },
+        ]
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 2,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-              },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 2,
             },
-            {
-              loader: 'postcss-loader',
-            },
-          ],
-        }),
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ]
       },
       {
         test: /\.svg$/,
