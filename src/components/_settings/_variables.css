@@ -13,6 +13,12 @@
   --wait: #fff8dd;
   --error: #d92525;
 
+  --color-primary: #37475A
+  --color-primary-dark-1: #232f3e;
+  --color-primary-dark-2: #131921;
+
+  --header-background: var(--color-primary-dark-2);
+
   /*
   * Fonts
   */
