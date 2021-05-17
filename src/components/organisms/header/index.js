@@ -10,9 +10,9 @@ type Props = {
 }
 
 const Header = (props: Props): React.Element<*> => (
-  <div className={classnames(styles.header, props.className)}>
+  <header className={classnames(styles.header, props.className)}>
     {props.children}
-  </div>
+  </header>
 )
 
 Header.defaultProps = {

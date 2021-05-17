@@ -2,21 +2,29 @@
   /*
   * Colors
   */
-  --brand: #2995c0;
-  --grey-1: #474747;
-  --grey-2: #919191;
-  --grey-3: #dadada;
-  --grey-4: #ededed;
-  --color-type-body: var(--grey-1);
-  --success: #2a7e2e;
-  --atenttion: #2196f3;
-  --wait: #fff8dd;
-  --error: #d92525;
-
   --color-primary: #37475A
   --color-primary-dark-1: #232f3e;
   --color-primary-dark-2: #131921;
 
+  --color-secondary: #F90;
+
+  --brand: #2995c0;
+
+  --color-grey-light-1: #ededed;
+  --color-grey-light-2: #dadada;
+  --color-grey-light-3: #919191;
+
+  --color-grey-dark: #474747;
+
+  --success: #2a7e2e;
+  --atenttion: #2196f3;
+  --wait: #fff8dd;
+  --error: #d92525;
+  
+  --white: #fff;
+  --black: #00000;
+   
+  --color-type-body: var(--grey-1);
   --header-background: var(--color-primary-dark-2);
 
   /*

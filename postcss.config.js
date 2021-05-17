@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const postCSSImport = require('postcss-import')
 const postCSSNested = require('postcss-nested')
+const postcssCustomMedia = require('postcss-custom-media')
 const postCssCssVariables = require('postcss-css-variables')()
 const postCSSInlineSVG = require('postcss-inline-svg')()
 
@@ -19,5 +20,8 @@ module.exports = {
     postCssCssVariables,
     postCSSInlineSVG,
     colorFunction,
+    postcssCustomMedia({
+      importFrom: 'src/components/_settings/_medias.css'
+    })
   ],
 }

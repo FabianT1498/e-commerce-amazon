@@ -6,7 +6,7 @@
   letter-spacing: 3px;
   line-height: 1;
   margin-top: 0;
-  color: var(--grey-3);
+  /* color: var(--grey-3); */
 
   &:after {
     content: '';

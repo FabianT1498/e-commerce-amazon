@@ -1,0 +1,20 @@
+@import '../../_settings/_variables.css';
+
+/* Size */
+.small {
+  width: 100px; 
+}
+
+.medium {
+  width: 150px; 
+}
+
+.large {
+  width: 200px; 
+}
+
+/* Type */
+.logo-header {
+  margin-top: 5px;
+  margin: 0 1rem;
+}

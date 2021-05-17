@@ -1,9 +1,12 @@
 // @Flow
 import * as React from 'react'
 
-import Subtitle from '_components/atoms/subtitle'
-import Block from '_components/molecules/block'
+
 import Header from '_components/organisms/header'
+import Nav from '_components/molecules/nav'
+import SearchForm from '_components/molecules/search-form'
+import Logo from '_components/atoms/logo'
+
 import view from '_components/templates/default/styles.css'
 
 import './bootstrap'
@@ -12,11 +15,9 @@ const App = () => (
 
   /* Header */
   <Header>
-    <img
-      className="logo"
-      src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-    />
-
+    <Logo></Logo>
+    <SearchForm></SearchForm>
+    <Nav></Nav>
   </Header>
 )
 
