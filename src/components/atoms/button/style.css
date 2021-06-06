@@ -7,14 +7,13 @@
   display: block;
   font-size: 0.9em;
   font-weight: 600;
-  text-transform: uppercase;
   cursor: pointer;
   position: relative;
 }
 
 /* Size */
 .small {
-  padding: 0.4rem 0.5rem;
+  padding: 0.2rem 0.4rem;
 }
 
 .medium {
@@ -28,13 +27,22 @@
 /* Theme */
 .default {
   color: #fff;
-  background: var(--brand);
+  background-color: var(--brand);
 }
 
 .rounded {
   color: #fff;
-  background: var(--brand);
+  background-color: var(--brand);
   border-radius: 0 3px 3px 0;
+}
+
+.product {
+  font-weight: 300;
+  color: var(--black);
+  background-color: var(--button-background);
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 3px;
 }
 
 /* Disabled */

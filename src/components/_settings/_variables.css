@@ -7,10 +7,11 @@
   --color-primary-dark-2: #131921;
 
   --color-secondary: #F90;
-
+  --color-secondary-light: #f0c14b;
+ 
   --brand: #2995c0;
 
-  --color-grey-light-1: #ededed;
+  --color-grey-light-1: #efebeb;
   --color-grey-light-2: #dadada;
   --color-grey-light-3: #919191;
 
@@ -22,10 +23,12 @@
   --error: #d92525;
   
   --white: #fff;
-  --black: #00000;
+  --black: #000;
    
   --color-type-body: var(--grey-1);
   --header-background: var(--color-primary-dark-2);
+  --body-background: var(--color-grey-light-1);
+  --button-background: var(--color-secondary-light);
 
   /*
   * Fonts
@@ -33,5 +36,11 @@
   --base-font-family: sans-serif;
   --headers-font-family: serif;
   --base-font-lineheight: 1.5em;
+
+  /* Grid */
+  --grid-width: 1140px;
+  --gutter-vertical: 2.5rem;
+  --gutter-vertical-small: 1.875rem;
+  --gutter-horizontal: 2rem;
 }
 

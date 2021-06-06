@@ -13,6 +13,7 @@ export const ButtonType = {
 export const ButtonTheme = {
   DEFAULT: 'default',
   ROUNDED: 'rounded',
+  PRODUCT: 'product'
 }
 
 export const ButtonSize = {

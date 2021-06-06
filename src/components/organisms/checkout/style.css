@@ -1,0 +1,17 @@
+@import '../../_settings/_variables.css';
+
+.checkout {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1rem;
+    background-color: var(--white);
+    justify-content: space-between;
+
+    & > div {
+        flex: 0 0 70%;
+
+        &:last-child {
+            flex: 0 0 25%;
+        }
+    }
+}

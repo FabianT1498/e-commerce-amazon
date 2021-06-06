@@ -5,6 +5,7 @@ module.exports = {
   extensions: ['.js'],
   alias: {
     _components: path.resolve(__dirname, '..', 'src/components/'),
+    _context: path.resolve(__dirname, '..', 'src/context/'),
     _views: path.resolve(__dirname, '..', 'src/views/'),
   },
 }

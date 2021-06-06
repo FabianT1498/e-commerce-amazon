@@ -2,6 +2,8 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
+import { Link } from "react-router-dom";
+
 import styles from './style.css';
 
 import NavItem from '_components/atoms/nav-item';
@@ -14,7 +16,9 @@ const Nav = (props: Props): React.Element<*> => {
       <NavItem linesText={['Hello Guest', 'Sign In']}></NavItem>
       <NavItem linesText={['Return', '& Orders']}></NavItem>
       <NavItem linesText={['Your', 'Prime']}></NavItem>
-      <NavItemBasket></NavItemBasket>
+      <Link to="/checkout">
+        <NavItemBasket></NavItemBasket>
+      </Link>
       {/* <a href="#">
         <div className="nav-line-1-container">
           <span id="nav-link-accountList-nav-line-1" className="nav-line-1 nav-progressive-content">Hello, Sign in</span>
