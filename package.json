@@ -67,7 +67,6 @@
         "postcss-inline-svg": "^5.0.0",
         "postcss-loader": "^5.2.0",
         "postcss-nested": "^5.0.5",
-        "postcss-utilities": "^0.8.4",
         "prettier": "^2.2.1",
         "stylelint": "^13.13.1",
         "stylelint-config-standard": "^22.0.0",

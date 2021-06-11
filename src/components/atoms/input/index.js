@@ -28,7 +28,7 @@ type Props = {
 }
 
 const Input = (props: Props): React.Element<*> => {
-  const { type, children, theme, size, className } = props
+  const { type, children, theme, size, name, className } = props
   const classProps: string = classnames(
     styles.input,
     styles[theme],
@@ -37,7 +37,7 @@ const Input = (props: Props): React.Element<*> => {
   )
 
   return (
-    <input type={type} className={classProps}></input>
+    <input type={type} name={name} className={classProps}></input>
   )
 }
 

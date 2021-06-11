@@ -21,7 +21,7 @@ type Props = {
 }
 
 const Logo = (props: Props): React.Element<*> => {
-  const { type, size, className } = props
+  const { type, size, src, className } = props
   const classProps: string = classnames(
     styles[type],
     styles[size],
@@ -31,7 +31,7 @@ const Logo = (props: Props): React.Element<*> => {
   return (
     <img
       className={classProps}
-      src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+      src={src}
     />
   )
 }

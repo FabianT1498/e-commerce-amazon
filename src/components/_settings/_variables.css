@@ -7,7 +7,8 @@
   --color-primary-dark-2: #131921;
 
   --color-secondary: #F90;
-  --color-secondary-light: #f0c14b;
+  --color-secondary-light-1: #f0c14b;
+  --color-secondary-light-2: #f1d388;
  
   --brand: #2995c0;
 
@@ -28,8 +29,9 @@
   --color-type-body: var(--grey-1);
   --header-background: var(--color-primary-dark-2);
   --body-background: var(--color-grey-light-1);
-  --button-background: var(--color-secondary-light);
-
+  --button-background: var(--color-secondary-light-1);
+  --input-login-background: var(--color-secondary-light-2);
+  --link-button-background: var(--color-grey-light-1);
   /*
   * Fonts
   */

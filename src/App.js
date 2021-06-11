@@ -1,16 +1,13 @@
 // @Flow
 import {Component, Fragment} from 'react'
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 /* Provider */
 import BasketProvider from '_context/basket/basketContext'
 
 /* Nav components */
 import Header from '_components/organisms/header'
-import Nav from '_components/molecules/nav'
-import SearchForm from '_components/molecules/search-form'
-import Logo from '_components/atoms/logo'
 
 /* Home components */
 import Home from '_components/organisms/home'
@@ -19,28 +16,24 @@ import Checkout from '_components/organisms/checkout'
 
 import view from '_components/templates/default/styles.css'
 
+import Login from '_components/organisms/login'
+
 import './bootstrap'
 
 const App = () => (
 
   <Router>
     <BasketProvider>
-      <Header>
-        <Link to="/">
-          <Logo></Logo>
-        </Link>
-        <SearchForm></SearchForm>
-        <Nav></Nav>
-      </Header>
-    
       <Switch>
         <Route path="/login">          
-          <h1>Login page</h1>   
+          <Login></Login>
         </Route>
-        <Route path="/checkout">          
+        <Route path="/checkout">   
+          <Header/>       
           <Checkout/>    
         </Route>        
-        <Route path="/">          
+        <Route path="/">
+          <Header/>          
           <Home/>    
         </Route>      
       </Switch>    

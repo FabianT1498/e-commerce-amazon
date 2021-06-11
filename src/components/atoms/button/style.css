@@ -24,6 +24,12 @@
   padding: 1.2rem 1.3rem;
 }
 
+/* Width */
+
+.full {
+  width: 100%
+}
+
 /* Theme */
 .default {
   color: #fff;

@@ -22,10 +22,15 @@ export const ButtonSize = {
   LARGE: 'large',
 }
 
+export const ButtonWidth = {
+  FULL: 'full'
+}
+
 type Props = {
   type: string,
   theme: string,
   size: string,
+  width: string,
   onClick: Function,
   children: React.Node,
   className: string,
@@ -33,11 +38,12 @@ type Props = {
 }
 
 const Button = (props: Props): React.Element<*> => {
-  const { type, onClick, children, theme, size, className, disabled } = props
+  const { type, onClick, children, theme, width, size, className, disabled } = props
   const classProps: string = classnames(
     styles.button,
     styles[theme],
     styles[size],
+    styles[width],
     {
       [styles.disabled]: disabled,
     },
@@ -55,6 +61,7 @@ Button.defaultProps = {
   type: ButtonType.BUTTON,
   theme: ButtonTheme.DEFAULT,
   size: ButtonSize.MEDIUM,
+  width: ButtonWidth.FULL,
   onClick: () => {},
   className: '',
   disabled: false,
