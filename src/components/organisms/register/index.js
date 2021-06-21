@@ -8,7 +8,7 @@ import Logo from '_components/atoms/logo'
 import Title from '_components/atoms/title'
 import NavLink from '_components/atoms/nav-link'
 
-import LoginForm from '_components/molecules/login-form'
+import RegisterForm from '_components/molecules/register-form'
 
 import styles from './style.css'
 
@@ -17,10 +17,10 @@ type Props = {
   className?: string,
 }
 
-const Login = (props: Props): React.Element<*> => {
+const Register = (props: Props): React.Element<*> => {
   
   return (
-    <div className={styles.login}>
+    <div className={styles.register}>
       <div className={styles.section}>
         <Link to="/">
           <Logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"></Logo>
@@ -28,26 +28,26 @@ const Login = (props: Props): React.Element<*> => {
       </div>
       <div className={styles['form-container']}>
         <div className={styles.section}>
-          <Title>Sign In</Title>
+          <Title>Create account</Title>
         </div>
         <div className={styles.section}>
-          <LoginForm/>
+          <RegisterForm/>
         </div>
         <div className={styles.section}>
           <p className={styles.condition}>
-            By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
+            By creating an account you agree to the AMAZON FAKE CLONE Conditions of Use &amp; Sale. Please
             see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
           </p>
         </div>
-        <NavLink size="small" width="full" theme="button" to="/register">Create your Amazon Account</NavLink>
+        Already have an account? <NavLink theme="anchor" to="/login">Sign-In</NavLink>
       </div>
     </div>
   );
 }
 
-Login.defaultProps = {
+Register.defaultProps = {
   className: undefined,
   children: undefined,
 }
 
-export default Login
+export default Register

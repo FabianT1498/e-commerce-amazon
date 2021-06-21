@@ -4,8 +4,10 @@
   border: 0;
   outline: 0;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: inherit;
   padding-right: 0.5rem;
+  transition: all .3s;
+  border-radius: 3px;
 }
 
 /* Size */
@@ -29,22 +31,22 @@
 .default {
   color: var(--black);
   background: var(--white);
-  border: 3px solid transparent;
-  transition: all .3s;
+  border: 1px solid var(--color-grey-dark);
+  height: 31px;
 }
 
 .rounded {
   color: inherit;
   background: none;
-  border-radius: 3px;
 }
 
 .login {
   border: 1px solid;
-  border-radius: 3px;
   background-color: var(--input-login-background);
   border-color: #a88734 #9c7e31 #846a29;
   padding: 3px 7px;
   height: 31px;
 }
+
+
 

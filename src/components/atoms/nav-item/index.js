@@ -7,13 +7,18 @@ import { Link } from "react-router-dom";
 
 import classnames from 'classnames'
 
-console.log(styles);
+type Props = {
+  to: string,
+  linesText: string[],
+  onClick: Function,
+  className: string,
+}
 
 const NavItem = (props: Props): React.Element<*> => {
-  const { linesText, to, children, className } = props
+  const { linesText, to, onClick, children, className } = props
 
   return (
-    <Link to={to} className={styles.item}>
+    <Link to={to} className={styles.item} onClick={onClick}>
       <div>
         {linesText[0]}
       </div>
@@ -22,6 +27,13 @@ const NavItem = (props: Props): React.Element<*> => {
       </div>
     </Link>
   )
+}
+
+NavItem.defaultProps = {
+  to: '/',
+  linesText: [],
+  onClick: () => {},
+  className: '',
 }
 
 export default NavItem

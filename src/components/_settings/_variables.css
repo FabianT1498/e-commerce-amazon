@@ -2,9 +2,12 @@
   /*
   * Colors
   */
+
   --color-primary: #37475A
   --color-primary-dark-1: #232f3e;
   --color-primary-dark-2: #131921;
+
+  --color-primary-light: #0066c0;
 
   --color-secondary: #F90;
   --color-secondary-light-1: #f0c14b;
@@ -32,6 +35,8 @@
   --button-background: var(--color-secondary-light-1);
   --input-login-background: var(--color-secondary-light-2);
   --link-button-background: var(--color-grey-light-1);
+  --link-anchor-color: var(--color-primary-light);
+  
   /*
   * Fonts
   */

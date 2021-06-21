@@ -1,6 +1,6 @@
 @import '../../_settings/_variables.css';
 
-.login {
+.register {
     font-size: 0.65rem;
     background-color: var(--white);
     height: 100vh;

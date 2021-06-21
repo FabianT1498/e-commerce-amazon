@@ -25,10 +25,12 @@ type Props = {
   size: string,
   children: React.Node,
   className: string,
+  onChange: Function,
+  value: string
 }
 
 const Input = (props: Props): React.Element<*> => {
-  const { type, children, theme, size, name, className } = props
+  const { type, children, value, theme, size, name, onChange, className } = props
   const classProps: string = classnames(
     styles.input,
     styles[theme],
@@ -37,7 +39,7 @@ const Input = (props: Props): React.Element<*> => {
   )
 
   return (
-    <input type={type} name={name} className={classProps}></input>
+    <input type={type} name={name} value={value} className={classProps} onChange={onChange}></input>
   )
 }
 
@@ -46,6 +48,8 @@ Input.defaultProps = {
   theme: InputTheme.DEFAULT,
   size: InputSize.MEDIUM,
   className: '',
+  onChange: () => {},
+  value: ''
 }
 
 export default Input

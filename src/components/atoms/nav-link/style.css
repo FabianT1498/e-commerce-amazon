@@ -1,7 +1,7 @@
 @import '../../_settings/_variables.css';
 
 .link:link, .link:visited {
-  font-size: 0.9rem;
+  font-size: inherit;
   display: inline-block;
   transition: all .3s;
   text-decoration: none;
@@ -41,5 +41,17 @@
 
   &:hover, &:active {
     background: linear-gradient(to bottom, var(--color-grey-light-1), var(--color-grey-light-2))
+  }
+}
+
+.anchor {
+  color: var(--link-anchor-color);
+  padding: 0;
+  width: auto;
+  
+  &:hover, &:active {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--color-secondary);
   }
 }

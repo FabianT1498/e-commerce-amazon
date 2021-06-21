@@ -5,7 +5,7 @@
   border: 0;
   outline: 0;
   display: block;
-  font-size: 0.9em;
+  font-size: inherit;
   font-weight: 600;
   cursor: pointer;
   position: relative;

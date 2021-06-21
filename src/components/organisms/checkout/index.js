@@ -3,6 +3,7 @@ import React, { useContext } from "react"
 import classnames from 'classnames'
 
 import { BasketContext } from '_context/basket/basketContext'
+import { AuthContext } from '_context/auth/authContext'
 
 import Image from '_components/atoms/image'
 import Subtitle from '_components/atoms/subtitle'
@@ -20,6 +21,7 @@ type Props = {
 const Checkout = (props: Props): React.Element<*> => {
   
   const { basket } = useContext(BasketContext)
+  const { user } = useContext(AuthContext)
 
   return (
     <div className={styles.checkout}>  
@@ -29,6 +31,7 @@ const Checkout = (props: Props): React.Element<*> => {
           type="ad"
           size="big"
         />
+        <Subtitle>Hello, {user ? user.email : 'Guest'}</Subtitle>
         <Subtitle type="underline"> Your shopping Basket</Subtitle>
         {basket.map(item => (
           <CheckoutProduct
