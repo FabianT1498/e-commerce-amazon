@@ -9,6 +9,7 @@
     "scripts": {
         "start": "node server.dev.js",
         "dev": "NODE_ENV=development PORT=5000 node server.dev.js",
+        "build": "webpack --config webpack.config.prod.js",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "eslint": "eslint src webpack",
@@ -74,9 +75,11 @@
         "svg-sprite-loader": "^6.0.6",
         "svgo-loader": "^3.0.0",
         "webpack": "^5.36.2",
+        "webpack-cli": "^4.7.2",
         "webpack-dev-middleware": "^4.1.0",
         "webpack-hot-middleware": "^2.25.0",
         "webpack-manifest-plugin": "^3.1.1",
+        "webpack-merge": "^5.8.0",
         "workbox-build": "^6.1.5",
         "workbox-runtime-caching": "^2.0.3",
         "workbox-webpack-plugin": "^6.1.5"
