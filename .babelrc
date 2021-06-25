@@ -13,6 +13,9 @@
     "development": {
       "presets": ["@babel/preset-env", "@babel/preset-react"]
     },
+    "production": {
+      "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"]
+    },
     "test": {
       "presets": ["@babel/preset-env", "@babel/preset-react"]
     }
