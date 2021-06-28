@@ -49,22 +49,22 @@ const RegisterForm = (props: Props): React.Element<*> => {
   return (
     <form className={styles['form']} action="">
       <div className={styles.section}>
-        <label for="email">Your name</label>
+        <label htmlFor="email">Your name</label>
         <Input size="full" name="name" value={name} onChange={e => setName(e.target.value)}/>
       </div>
 
       <div className={styles.section}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <Input theme="login" size="full" name="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </div>
 
       <div className={styles.section}>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <Input theme="login" size="full" type="password" name="password" value={password} onChange={e => setPassword(e.target.value)}/>
       </div>
 
       <div className={styles.section}>
-        <label for="re-password">Re-enter password</label>
+        <label htmlFor="re-password">Re-enter password</label>
         <Input size="full" type="password" name="re-password" value={rePassword} onChange={e => setRePassword(e.target.value)}/>
       </div>
 

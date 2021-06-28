@@ -16,9 +16,8 @@ const Product = (props: Props): React.Element<*> => {
 
     const { dispatch } = useContext(BasketContext)
 
-    const addToBasket = function(){
+    const addToBasket = () => {
 
-        console.log('Hola mundoo');
         // Dispatch some item into the data layer
         dispatch({ 
             type: "ADD_PRODUCT",

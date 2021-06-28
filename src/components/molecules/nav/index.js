@@ -23,7 +23,7 @@ const Nav = (props: Props): React.Element<*> => {
 
   return (
     <nav className={classnames(styles.nav)}>
-      <NavItem to={!user && '/login'} linesText={['Hello Guest', user ? 'Sign Out':'Sign In']} onClick={handleAuthentication}></NavItem>   
+      <NavItem to={!user && '/login'} linesText={[`Hello ${user ? user.email : 'Guest'}`, user ? 'Sign Out':'Sign In']} onClick={handleAuthentication}></NavItem>   
       <NavItem to="/orders" linesText={['Return', '& Orders']}></NavItem>
       <NavItem to="/account" linesText={['Your', 'Prime']}></NavItem>
       <NavItemBasket to="/checkout"></NavItemBasket>

@@ -46,12 +46,12 @@ const LoginForm = (props: Props): React.Element<*> => {
   return (
     <form className={styles['form']} action="">
       <div className={styles.section}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <Input theme="login" size="full" name="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </div>
 
       <div className={styles.section}>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <Input theme="login" size="full" type="password" name="password" value={password} onChange={e => setPassword(e.target.value)}/>
       </div>
 
