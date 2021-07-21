@@ -26,22 +26,33 @@ const Checkout = (props: Props): React.Element<*> => {
   return (
     <div className={styles.checkout}>  
       <div>
-        <Image 
-          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
-          type="ad"
-          size="big"
-        />
-        <Subtitle>Hello, {user ? user.email : 'Guest'}</Subtitle>
-        <Subtitle type="underline"> Your shopping Basket</Subtitle>
-        {basket.map(item => (
-          <CheckoutProduct
-            id={item.id}
-            price={item.price}
-            title={item.title}
-            rating={item.rating}
-            image={item.image}
+        <div className={styles['ad-container']}>
+          <Image 
+            src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
+            type="ad"
+            size="big"
           />
-        ))}
+        </div>
+        <div className={styles['products']}> 
+          <div className={styles['products-header']}>
+            <Subtitle>Hello, {user ? user.email : 'Guest'}</Subtitle>
+            <Subtitle type="underline"> Your shopping Basket</Subtitle>
+          </div>
+
+          {basket.length > 0 && 
+            <div className={styles['products-list']}>
+              {basket.map(item => (
+                <CheckoutProduct
+                  id={item.id}
+                  price={item.price}
+                  title={item.title}
+                  rating={item.rating}
+                  image={item.image}
+                />
+              ))} 
+            </div>
+          }          
+        </div>
       </div>
       <div>
         <Subtotal/>

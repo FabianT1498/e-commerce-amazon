@@ -22,7 +22,6 @@ export const NavLinkWidth = {
 }
 
 type Props = {
-
   theme: string,
   size: string,
   width: string,
@@ -50,8 +49,6 @@ const NavLink = (props: Props): React.Element<*> => {
 
 NavLink.defaultProps = {
   theme: NavLinkTheme.DEFAULT,
-  size: NavLinkSize.MEDIUM,
-  width: NavLinkWidth.FULL,
   to: '/',
   className: '',
 }

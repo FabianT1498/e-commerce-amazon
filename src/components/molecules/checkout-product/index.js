@@ -5,9 +5,9 @@ import { BasketContext } from '_context/basket/basketContext'
 
 import classnames from 'classnames'
 
-import Subtitle from '_components/atoms/subtitle'
 import Image from '_components/atoms/image'
 import Button from '_components/atoms/button'
+import NavLink from '_components/atoms/nav-link'
 
 
 const CheckoutProduct = (props: Props): React.Element<*> => {
@@ -35,16 +35,14 @@ const CheckoutProduct = (props: Props): React.Element<*> => {
             </div>
             <div className={styles.info}>
                 <div className={styles.section}>
-                    <Subtitle>
-                        <a className={styles.link} href="#">{title}</a> 
-                    </Subtitle>
+                    <NavLink>{title}</NavLink>
                 </div>
                 <div className={styles.section}>
                     <p className={styles.price}>
                         <small>$</small><strong>{price}</strong>
                     </p>
                 </div>
-                <Button onClick={removeFromBasket} size="small" theme="product">Remove from car</Button>
+                <Button onClick={removeFromBasket} size="small" theme="product" width="p-30">Remove from car</Button>
             </div>
         </div>
     );

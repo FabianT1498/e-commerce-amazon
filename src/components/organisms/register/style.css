@@ -9,22 +9,25 @@
     align-items: center;
     padding-top: 1rem;
 
-    .section {
-        margin-bottom: 1rem;
-    }
-
-    .condition {
-        font-size: 0.6rem;
-        line-height: 1.5;
-    }
-
     & > .form-container {
         width: 300px;
         height: fit-content;
         border-radius: 5px;
         border: 1px solid var(--color-grey-light-1);
         padding: 1rem;
-        margin-bottom: 1rem;
+        
+        & > .section {
+            margin-bottom: 1rem;
+
+            &:first-child {
+                text-align: center;
+            }
+
+            .condition {
+                font-size: 0.90em;
+                line-height: 1.5;
+            }
+        }
     }
 
 }

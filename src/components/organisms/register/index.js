@@ -39,7 +39,7 @@ const Register = (props: Props): React.Element<*> => {
             see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
           </p>
         </div>
-        Already have an account? <NavLink theme="anchor" to="/login">Sign-In</NavLink>
+        Already have an account? <NavLink to="/login">Sign-In</NavLink>
       </div>
     </div>
   );

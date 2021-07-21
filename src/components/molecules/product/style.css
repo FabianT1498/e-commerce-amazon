@@ -6,11 +6,12 @@
     box-shadow: 0 2px 2px #efefef;
     border-radius: 3px;
     margin-bottom: 0.8rem;
+    font-size: 0.65rem;
 
     & > .section {
         padding: 0.75rem;
         border-bottom: 1px solid var(--color-grey-light-1);
-
+        
         &:first-child {
             background-color: #fcfcfc;
         }

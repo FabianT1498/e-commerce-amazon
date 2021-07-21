@@ -5,8 +5,6 @@
   border: 0;
   outline: 0;
   display: block;
-  font-size: inherit;
-  font-weight: 600;
   cursor: pointer;
   position: relative;
 }
@@ -26,6 +24,18 @@
 
 /* Width */
 
+.p-30 {
+  width: 30%;
+}
+
+.p-50 {
+  width: 50%;
+}
+
+.p-70 {
+  width: 70%;
+}
+
 .full {
   width: 100%
 }
@@ -43,16 +53,13 @@
 }
 
 .product {
-  font-weight: 300;
   color: var(--black);
   background-color: var(--button-background);
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
   border-radius: 3px;
-}
 
-/* Disabled */
-.disabled {
-  color: var(--grey-2);
-  cursor: default;
+  &:hover, &:active {
+    background: linear-gradient(to bottom, #f5d78e,#eeb933);
+  }
 }

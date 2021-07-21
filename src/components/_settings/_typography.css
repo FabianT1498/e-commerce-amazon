@@ -1,8 +1,30 @@
 @import './_variables.css';
 
+@font-face {
+    font-family: "Amazon-Ember";
+    src: url('../../assets/fonts/AmazonEmber_Rg.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Amazon-Ember";
+    src: url('../../assets/fonts/AmazonEmber_RgIt.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Amazon-Ember";
+    src: url('../../assets/fonts/AmazonEmber_Bd.ttf');
+    font-weight: 700;    /* or whatever weight you need to use for "bolder" */
+}
+@font-face {
+    font-family: "Amazon-Ember";
+    src: url('../../assets/fonts/AmazonEmber_Lt.ttf');
+    font-weight: 300;    /* or whatever weight you need to use for "bolder" */
+}
+  
 body {
-    font-family: 'Lato', 'Arial', sans-serif;
-    font-weight: 300;
-    /* line-height: 1.7; */
+    font-family: 'Amazon-Ember', 'Lato', 'Arial', sans-serif;
+    font-weight: 400;
     color: var(--black);
 }

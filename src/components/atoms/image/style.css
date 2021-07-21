@@ -14,18 +14,12 @@
 /* Type */
 .hero {
   z-index: -1;
-  margin-bottom: -150px;
+  margin-bottom: -200px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .product {
   max-height: 200px;
-  margin-bottom: 0.75rem;
   object-fit: contain;
 }
-
-.ad {
-  margin-bottom: 0.5rem;
-}
-
 

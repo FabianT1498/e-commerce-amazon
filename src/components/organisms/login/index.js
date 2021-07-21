@@ -21,10 +21,8 @@ const Login = (props: Props): React.Element<*> => {
   
   return (
     <div className={styles.login}>
-      <div className={styles.section}>
-        <Link to="/">
-          <Logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"></Logo>
-        </Link>
+      <div className={styles['logo-container']}>  
+        <Logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"/>
       </div>
       <div className={styles['form-container']}>
         <div className={styles.section}>

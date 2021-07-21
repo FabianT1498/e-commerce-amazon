@@ -1,12 +1,9 @@
 /* @flow */
 import * as React from 'react'
-import classnames from 'classnames'
+
+import { Link } from "react-router-dom";
 
 import styles from './style.css'
-
-export const LogoType = {
-  HEADER: 'logo-header',
-}
 
 export const LogoSize = {
   SMALL: 'small',
@@ -15,29 +12,24 @@ export const LogoSize = {
 }
 
 type Props = {
-  type: string,
   size: string,
   className: string,
 }
 
 const Logo = (props: Props): React.Element<*> => {
-  const { type, size, src, className } = props
-  const classProps: string = classnames(
-    styles[type],
-    styles[size],
-    className
-  )
+  const { size, src, className } = props
 
   return (
-    <img
-      className={classProps}
-      src={src}
-    />
+    <Link to="/">
+      <img
+        className={styles[size]}
+        src={src}
+      /> 
+    </Link>
   )
 }
 
 Logo.defaultProps = {
-  type: LogoType.HEADER,
   size: LogoSize.SMALL,
   className: '',
 }

@@ -2,6 +2,8 @@
 import React, { useContext } from "react"
 import classnames from 'classnames'
 
+import { useHistory } from 'react-router-dom'
+
 import { BasketContext } from '_context/basket/basketContext'
 import { getBasketTotal } from '_context/basket/reducer'
 
@@ -23,6 +25,7 @@ export const SubtotalTheme = {
 const Subtotal = (props: Props): React.Element<*> => {
 
   const { children, theme, className } = props;
+  const history = useHistory();
 
   const classProps: string = classnames(
     styles.subtotal,
@@ -52,7 +55,7 @@ const Subtotal = (props: Props): React.Element<*> => {
         prefix={'$'}
       />
 
-      <Button size="small" theme="product">Proceed to checkout</Button>
+      <Button onClick={e => history.push('/payment')} size="small" theme="product">Proceed to checkout</Button>
     </div>
   )
 }

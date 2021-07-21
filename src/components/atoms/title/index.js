@@ -9,9 +9,16 @@ type Props = {
   className?: string,
 }
 
-const Title = (props: Props): React.Element<*> => (
-  <h1 className={classnames(styles.title, props.className)}>{props.children}</h1>
-)
+const Title = (props: Props): React.Element<*> => {
+  const { className, type } = props;
+  const classProps: string = classnames(
+    styles.title,
+    className,
+    styles[type], 
+  )
+
+  return (<h1 className={classProps}>{props.children}</h1>);
+}
 
 Title.defaultProps = {
   className: '',

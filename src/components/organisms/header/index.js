@@ -18,9 +18,9 @@ type Props = {
 
 const Header = (props: Props): React.Element<*> => (
   <header className={classnames(styles.header, props.className)}>
-    <Link to="/">
-      <Logo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"></Logo>
-    </Link>
+    <div className={styles['logo-container']}>
+      <Logo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"/>
+    </div>
     <SearchForm></SearchForm>
     <Nav></Nav>
   </header>

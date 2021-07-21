@@ -8,6 +8,8 @@
   padding-right: 0.5rem;
   transition: all .3s;
   border-radius: 3px;
+  padding: 3px 7px;
+  height: 31px;
 }
 
 /* Size */
@@ -32,7 +34,6 @@
   color: var(--black);
   background: var(--white);
   border: 1px solid var(--color-grey-dark);
-  height: 31px;
 }
 
 .rounded {
@@ -44,8 +45,6 @@
   border: 1px solid;
   background-color: var(--input-login-background);
   border-color: #a88734 #9c7e31 #846a29;
-  padding: 3px 7px;
-  height: 31px;
 }
 
 
