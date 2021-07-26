@@ -42,14 +42,29 @@
 
 /* Theme */
 .default {
-  color: #fff;
-  background-color: var(--brand);
-}
 
-.rounded {
-  color: #fff;
-  background-color: var(--brand);
-  border-radius: 0 3px 3px 0;
+  color: var(--black);
+  background-color: var(--button-default-background);
+  border-radius: 3px;
+  text-align: center;
+  transition: all 3ms ease-in-out;
+
+  &:hover, &:active {
+    background: linear-gradient(to bottom, var(--color-grey-light-1), var(--color-grey-light-2))
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &--error {
+    transform: translateY(15px);
+  
+    &:active {
+      transform: scale(0.99) translateY(15px);
+    }
+  }
 }
 
 .product {

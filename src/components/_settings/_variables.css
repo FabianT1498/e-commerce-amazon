@@ -3,7 +3,7 @@
   * Colors
   */
   
-  --color-primary: #37475A
+  --color-primary: #37475A;
   --color-primary-dark-1: #232f3e;
   --color-primary-dark-2: #131921;
 
@@ -36,10 +36,12 @@
   --header-background: var(--color-primary-dark-2);
   --body-background: var(--color-grey-light-1);
   --button-background: var(--color-secondary-light-1);
+  --button-default-background: var(--color-grey-light-2);
   --input-login-background: var(--color-secondary-light-2);
   --link-button-background: var(--color-grey-light-1);
   --link-anchor-color: var(--color-primary-light);
   --link-anchor-color-hover: var(--color-secondary-dark-1);
+  --payment-form-group-background: var(--color-grey-light-2);
 
   /*
   * Fonts

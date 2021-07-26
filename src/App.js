@@ -22,7 +22,13 @@ import view from '_components/templates/default/styles.css'
 import Login from '_components/organisms/login'
 import Register from '_components/organisms/register'
 
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
 import './bootstrap'
+
+const stripePromise = loadStripe(`pk_test_51JFLoFKWPiO9XVVqlwqjLDE2TZTf1JFFXOBcuE9oBhsBEW0c
+  fiZPtAT1TgoWpUX2w4A4ZT1FGGRsWZf0zICvqCRv000szXGlsH`);
 
 const App = () => {
 
@@ -42,8 +48,10 @@ const App = () => {
               <Checkout/>    
             </Route>
             <Route path="/payment">   
-              <Header/>       
-              <Payment/>
+              <Header/>
+              <Elements stripe={stripePromise}>
+                <Payment/>
+              </Elements>      
             </Route>           
             <Route path="/">
               <Header/>          

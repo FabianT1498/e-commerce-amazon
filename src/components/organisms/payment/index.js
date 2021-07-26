@@ -1,11 +1,13 @@
 // @Flow
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import classnames from 'classnames'
 import { Link } from "react-router-dom";
+import axios from "_app/axiosInstance";
 
 import { BasketContext } from '_context/basket/basketContext'
 import { AuthContext } from '_context/auth/authContext'
 
+import PaymentForm from '_components/molecules/payment-form'
 import CheckoutProduct from '_components/molecules/checkout-product'
 
 import Title from '_components/atoms/title'
@@ -22,6 +24,20 @@ const Payment = (props: Props): React.Element<*> => {
   
   const { basket } = useContext(BasketContext)
   const { user } = useContext(AuthContext)
+
+  const [clientSecret, setClientSecret] = useState(true);
+
+  useEffect(() => {
+    const getClientSecret = async () => {
+      const response = await axios({
+        method: 'post',
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+      });
+      setClientSecret(response.data.clientSecret);
+    }
+
+    getClientSecret();
+  }, [basket])
 
   return (
     <div className={styles.payment}>
@@ -61,7 +77,9 @@ const Payment = (props: Props): React.Element<*> => {
             <Subtitle>Payment Method</Subtitle>
           </div>
           <div>
-            Hola mundo
+            <div className={styles['form-container']}>
+              <PaymentForm basket={basket} clientSecret={clientSecret}/>      
+            </div>
           </div>
         </div>
       </div>

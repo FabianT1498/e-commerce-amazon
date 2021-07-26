@@ -26,6 +26,7 @@
         "@storybook/addon-info": "^5.3.21",
         "@stripe/react-stripe-js": "^1.4.1",
         "@stripe/stripe-js": "^1.16.0",
+        "axios": "^0.21.1",
         "babel-plugin-flow-react-proptypes": "^26.0.0",
         "classnames": "^2.3.1",
         "express": "^4.17.1",

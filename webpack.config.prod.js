@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {merge} = require('webpack-merge');
 const common =  require('./webpack.common');
 
-const baseHTML = require('./src/index.html')
+const baseHTML = require('./src/index.html.js')
 
 module.exports = merge(common, {
   mode: 'production',
