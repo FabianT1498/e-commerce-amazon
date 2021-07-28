@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import classnames from 'classnames'
 import { useHistory } from "react-router-dom"
 
+import { db } from '_app/firebase' 
+
 import Button from '_components/atoms/button'
 import CardField from '_components/atoms/card-field'
 import ErrorMessage from '_components/atoms/error-message'
@@ -77,6 +79,17 @@ const PaymentForm = (props: Props): React.Element<*> => {
           card: elements.getElement(CardElement)
         }
       }).then(({ paymentIntent }) => {
+
+        db
+          .collection('users')
+          .doc(user?.id)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created
+          })
 
         // paymentIntent = paymen confirmation
         setPaymentMethod(paymentIntent)
