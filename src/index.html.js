@@ -20,8 +20,7 @@ module.exports = (initialHtml = '', paths = DEFAULT_PATHS) =>
     .sri}" />
 </head>
 <body>
-  
-  <div id="root"></div>
+  <div id="root"></div>  
   <script src="${paths.vendor.path}"></script>
 </body>
 </html>`

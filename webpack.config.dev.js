@@ -16,6 +16,6 @@ module.exports = merge(common, {
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.css',
-    })
+    }),
   ],
 });

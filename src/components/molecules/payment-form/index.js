@@ -12,6 +12,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import CurrencyFormat from 'react-currency-format'
 
 import { getBasketTotal } from '_context/basket/reducer'
+import { BasketContext } from '_context/basket/basketContext'
 
 import styles from './style.css';
 
@@ -26,7 +27,9 @@ export const PaymentFormTheme = {
 
 const PaymentForm = (props: Props): React.Element<*> => {
 
-  const { basket, clientSecret } = props;
+  const { clientSecret } = props;
+
+  const { basket, dispatch } = useContext(BasketContext)
 
   const stripe = useStripe();
   const elements = useElements();
@@ -78,6 +81,11 @@ const PaymentForm = (props: Props): React.Element<*> => {
         // paymentIntent = paymen confirmation
         setPaymentMethod(paymentIntent)
         setError(null)
+
+        dispatch({
+          type: 'EMPTY_BASKET'
+        })      
+
         history.replace('/orders')
       }).catch(({response}) => {
         setError(response.data);

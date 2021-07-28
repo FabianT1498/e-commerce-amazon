@@ -5,6 +5,9 @@ const webpack = require('webpack') // eslint-disable-line import/no-extraneous-d
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolve = require('./webpack/resolve.js')
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const baseHTML = require('./src/index.html.js')
+
 module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
@@ -104,4 +107,10 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: './index.html',
+      templateContent: baseHTML
+    })
+  ]
 }
