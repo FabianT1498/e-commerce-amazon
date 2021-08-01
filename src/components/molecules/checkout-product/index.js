@@ -12,7 +12,7 @@ import NavLink from '_components/atoms/nav-link'
 
 const CheckoutProduct = (props: Props): React.Element<*> => {
 
-    const { id, title, image, rating, price} = props;
+    const { id, title, image, rating, price, hideButton} = props;
 
     const { dispatch } = useContext(BasketContext)
 
@@ -42,10 +42,19 @@ const CheckoutProduct = (props: Props): React.Element<*> => {
                         <small>$</small><strong>{price}</strong>
                     </p>
                 </div>
-                <Button onClick={removeFromBasket} size="small" theme="product" width="p-30">Remove from car</Button>
+
+                {!hideButton && (
+                    <Button onClick={removeFromBasket} size="small" theme="product" width="p-30">Remove from car</Button>
+                )}
             </div>
         </div>
     );
+}
+
+CheckoutProduct.defaultProps = {
+  hideButton: false,
+  className: '',
+  children: '',
 }
 
 export default CheckoutProduct;

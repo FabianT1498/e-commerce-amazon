@@ -17,6 +17,8 @@ import Checkout from '_components/organisms/checkout'
 
 import Payment from 'components/organisms/payment'
 
+import Orders from 'components/organisms/orders'
+
 import view from '_components/templates/default/styles.css'
 
 import Login from '_components/organisms/login'
@@ -37,6 +39,10 @@ const App = () => {
       <Router>
         <BasketProvider>
           <Switch>
+            <Route exact path="/">
+              <Header/>          
+              <Home/>    
+            </Route>      
             <Route path="/orders">   
               <Header/>        
               <Orders/>
@@ -57,10 +63,6 @@ const App = () => {
                 <Payment/>
               </Elements>      
             </Route>           
-            <Route path="/">
-              <Header/>          
-              <Home/>    
-            </Route>      
           </Switch>    
         </BasketProvider>
       </Router>

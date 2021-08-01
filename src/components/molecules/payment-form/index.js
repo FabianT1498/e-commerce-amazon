@@ -1,5 +1,5 @@
 /* @flow */
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import classnames from 'classnames'
 import { useHistory } from "react-router-dom"
 
@@ -15,6 +15,7 @@ import CurrencyFormat from 'react-currency-format'
 
 import { getBasketTotal } from '_context/basket/reducer'
 import { BasketContext } from '_context/basket/basketContext'
+import { AuthContext } from '_context/auth/authContext'
 
 import styles from './style.css';
 
@@ -32,6 +33,8 @@ const PaymentForm = (props: Props): React.Element<*> => {
   const { clientSecret } = props;
 
   const { basket, dispatch } = useContext(BasketContext)
+
+  const { user } = useContext(AuthContext)
 
   const stripe = useStripe();
   const elements = useElements();
@@ -82,7 +85,7 @@ const PaymentForm = (props: Props): React.Element<*> => {
 
         db
           .collection('users')
-          .doc(user?.id)
+          .doc(user?.uid)
           .collection('orders')
           .doc(paymentIntent.id)
           .set({
@@ -100,7 +103,8 @@ const PaymentForm = (props: Props): React.Element<*> => {
         })      
 
         history.replace('/orders')
-      }).catch(({response}) => {
+      }).catch((response) => {
+        console.log(response);
         setError(response.data);
       });
   };
@@ -143,7 +147,7 @@ const PaymentForm = (props: Props): React.Element<*> => {
         type="submit"
         size="small" 
         width="p-30"  
-        disabled={paymentMethod || disabled || processing}
+        disabled={paymentMethod || disabled || processing || clientSecret === null}
       >
         {processing ? 'processing' : 'Buy now'}
       </Button>

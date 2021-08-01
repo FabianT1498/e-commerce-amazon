@@ -27,7 +27,7 @@ const Payment = (props: Props): React.Element<*> => {
   const { basket } = useContext(BasketContext)
   const { user } = useContext(AuthContext)
 
-  const [clientSecret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState(null);
 
   useEffect(() => {
     const getClientSecret = async () => {
