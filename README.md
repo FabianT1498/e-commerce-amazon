@@ -2,6 +2,7 @@
 
 | Script | Desc |
 | ---- | ---- |
+|`$ yarn build`| Build a production bundle |
 |`$ yarn start`| Start a simple webpack server |
 |`$ yarn dev`| Create a server to development at port 5000 |
 |`$ yarn storybook`| Start Storybook with the stories imported |

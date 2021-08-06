@@ -3,6 +3,8 @@ const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 
+const path = require('path');
+
 const config = require('./webpack.config.dev')
 const baseHTML = require('./src/index.html')
 
@@ -28,7 +30,15 @@ app.get('/static/404', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.send(baseHTML())
+  const filename = path.join(compiler.outputPath,'index.html');
+  compiler.outputFileSystem.readFile(filename, function(err, result){
+    if (err) {
+      return next(err);
+    }
+    res.set('content-type','text/html');
+    res.send(result);
+    res.end();
+  });
 })
 
 app.listen(port, ip, err => {
