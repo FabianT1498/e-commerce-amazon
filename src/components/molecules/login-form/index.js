@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import Input from '_components/atoms/input'
 import Button from '_components/atoms/button'
 
-import { useHistory } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 import { db, auth } from '_app/firebase' 
 
 import styles from './style.css';
@@ -23,7 +23,11 @@ const LoginForm = (props: Props): React.Element<*> => {
 
   const { children, theme, className } = props;
 
+  const location = useLocation();
+
   const history = useHistory();
+
+  const { from } = location.state || { from: { pathname: "/" } };
 
   const classProps: string = classnames(
     styles.search,
@@ -38,7 +42,7 @@ const LoginForm = (props: Props): React.Element<*> => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
       .then(auth => {
-        history.push('/')
+        history.push(from)
       })
       .catch(error => alert(error.message))
   }

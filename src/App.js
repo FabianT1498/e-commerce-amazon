@@ -3,6 +3,8 @@ import {Component, Fragment, useEffect} from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import PrivateRoute from '_utilities/privateRoute';
+
 /* Provider */
 import BasketProvider from '_context/basket/basketContext'
 import AuthProvider from '_context/auth/authContext'
@@ -42,27 +44,27 @@ const App = () => {
             <Route exact path="/">
               <Header/>          
               <Home/>    
-            </Route>      
-            <Route path="/orders">   
+            </Route>
+            <PrivateRoute path="/orders">   
               <Header/>        
               <Orders/>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">          
               <Login/>
             </Route>
             <Route path="/register">          
               <Register/>
             </Route>
-            <Route path="/checkout">   
+            <PrivateRoute path="/checkout">   
               <Header/>       
               <Checkout/>    
-            </Route>
-            <Route path="/payment">   
+            </PrivateRoute>
+            <PrivateRoute path="/payment">   
               <Header/>
               <Elements stripe={stripePromise}>
                 <Payment/>
               </Elements>      
-            </Route>           
+            </PrivateRoute>           
           </Switch>    
         </BasketProvider>
       </Router>
