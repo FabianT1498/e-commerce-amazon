@@ -1,5 +1,5 @@
 /* @flow */
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import classnames from 'classnames'
 
 import Input from '_components/atoms/input'
@@ -9,6 +9,9 @@ import { useHistory, useLocation } from "react-router-dom"
 import { db, auth } from '_app/firebase' 
 
 import styles from './style.css';
+
+import { AuthContext } from '_context/auth/authContext'
+
 
 type Props = {
   children?: React.Node,
@@ -29,6 +32,8 @@ const LoginForm = (props: Props): React.Element<*> => {
 
   const { from } = location.state || { from: { pathname: "/" } };
 
+  const { user, dispatch } = useContext(AuthContext)
+
   const classProps: string = classnames(
     styles.search,
     styles[theme],
@@ -42,6 +47,7 @@ const LoginForm = (props: Props): React.Element<*> => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
       .then(auth => {
+        dispatch({type: 'SET_USER', user: auth.user})
         history.push(from)
       })
       .catch(error => alert(error.message))
