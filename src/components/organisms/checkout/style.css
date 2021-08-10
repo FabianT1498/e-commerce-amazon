@@ -28,4 +28,19 @@
             flex: 0 0 25%;
         }
     }
+
+    @media (--tab-land-viewport) {
+
+        .products-list {
+            font-size: 0.88em;
+        }
+
+        & > div {
+            flex: 0 0 60%;
+    
+            &:last-child {
+                flex: 0 0 35%;
+            }
+        }
+    }
 }

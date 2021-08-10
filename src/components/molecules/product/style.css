@@ -5,7 +5,6 @@
     z-index: 1;
     box-shadow: 0 2px 2px #efefef;
     border-radius: 3px;
-    margin-bottom: 0.8rem;
     font-size: 0.65rem;
 
     & > .section {
@@ -21,5 +20,9 @@
             display: flex;
             justify-content: center;
         }
+    }
+
+    @media (--tab-land-viewport) {
+        font-size: 0.75rem;
     }
 }

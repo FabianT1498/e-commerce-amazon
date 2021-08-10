@@ -6,17 +6,18 @@
     display: flex;
     padding: 1rem;
     border-radius: 3px;
+    justify-content: space-between;
     
     &:not(:last-child){
         margin-bottom: 1.8rem;
     }
 
     .image {
-        padding-right: 1.5rem;
+        flex: 0 0 20%;
     }
 
     .info {
-        padding-left: 1rem;
+        flex: 0 0 75%;
 
         & > .section {
             margin-bottom: 0.3rem;

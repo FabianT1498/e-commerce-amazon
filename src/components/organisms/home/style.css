@@ -9,6 +9,12 @@
     margin: 0 auto;
 
     & > .item {
-        width: 300px;
+        flex: 0 28%;
+        margin-bottom: 1rem;
+    }
+
+    @media (--tab-land-viewport) {
+        max-width: 100%;
+        justify-content: space-evenly;
     }
 }

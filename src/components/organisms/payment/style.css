@@ -24,7 +24,7 @@
     }
     
     div:last-child {
-        flex: 0 80%;
+        flex: 0 75%;
     }
 
     &:nth-child(odd){
@@ -34,4 +34,8 @@
 
 .form-container {
     width: 50%;
+
+    @media (--tab-land-viewport) {
+        width: 60%;
+    }
 }
