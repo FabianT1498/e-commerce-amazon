@@ -10,14 +10,10 @@ type Props = {
 }
 
 const Title = (props: Props): React.Element<*> => {
-  const { className, type } = props;
-  const classProps: string = classnames(
-    styles.title,
-    className,
-    styles[type], 
-  )
+  const { className, type } = props
+  const classProps: string = classnames(styles.title, className, styles[type])
 
-  return (<h1 className={classProps}>{props.children}</h1>);
+  return <h1 className={classProps}>{props.children}</h1>
 }
 
 Title.defaultProps = {

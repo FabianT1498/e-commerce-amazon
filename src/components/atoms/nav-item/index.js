@@ -1,11 +1,9 @@
 /* @flow */
 import * as React from 'react'
+import { Link } from 'react-router-dom'
+import classnames from 'classnames'
 
 import styles from './style.css'
-
-import { Link } from "react-router-dom";
-
-import classnames from 'classnames'
 
 type Props = {
   to: string,
@@ -20,10 +18,14 @@ const NavItem = (props: Props): React.Element<*> => {
   const { linesText, to, onClick, onMouseEnter, onMouseLeave, children, className } = props
 
   return (
-    <Link to={to} className={styles.item} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      <div>
-        {linesText[0]}
-      </div>
+    <Link
+      to={to}
+      className={styles.item}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div>{linesText[0]}</div>
       <div>
         <span className={styles['line-two']}>{linesText[1]}</span>
       </div>

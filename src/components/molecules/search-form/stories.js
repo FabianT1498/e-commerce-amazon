@@ -3,7 +3,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Block from './'
+import Block from '.'
 
 storiesOf('Block', module).add('default', () => (
   <Block title="Atom" button="Learn more">

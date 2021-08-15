@@ -5,7 +5,7 @@ import classnames from 'classnames'
 
 import variables from './stories.css'
 
-const Vars = Object.keys(variables).map(v => (
+const Vars = Object.keys(variables).map((v) => (
   <p className={classnames(variables.colors, variables[v])}>{v}</p>
 ))
 

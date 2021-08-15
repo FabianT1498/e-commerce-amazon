@@ -10,18 +10,9 @@ type Props = {
 
 const Image = (props: Props): React.Element<*> => {
   const { className, src, type, size } = props
-  const classProps: string = classnames(
-    className,
-    styles[type], 
-    styles[size]
-  )
+  const classProps: string = classnames(className, styles[type], styles[size])
 
-  return (
-    <img
-      className={classProps}
-      src={src}
-    />
-  )
+  return <img className={classProps} src={src} />
 }
 
 export default Image

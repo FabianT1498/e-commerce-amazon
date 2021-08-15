@@ -1,6 +1,5 @@
 /* @flow */
 import * as React from 'react'
-
 import Card from '_components/atoms/card'
 import Button from '_components/atoms/button'
 import Title from '_components/atoms/title'

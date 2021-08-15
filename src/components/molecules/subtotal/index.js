@@ -1,17 +1,13 @@
 /* @flow */
-import React, { useContext } from "react"
+import React, { useContext } from 'react'
 import classnames from 'classnames'
-
 import { useHistory } from 'react-router-dom'
-
 import { BasketContext } from '_context/basket/basketContext'
 import { getBasketTotal } from '_context/basket/reducer'
-
 import CurrencyFormat from 'react-currency-format'
-
-import styles from './style.css';
-
 import Button from '_components/atoms/button'
+
+import styles from './style.css'
 
 type Props = {
   children?: React.Node,
@@ -23,15 +19,10 @@ export const SubtotalTheme = {
 }
 
 const Subtotal = (props: Props): React.Element<*> => {
+  const { children, theme, className } = props
+  const history = useHistory()
 
-  const { children, theme, className } = props;
-  const history = useHistory();
-
-  const classProps: string = classnames(
-    styles.subtotal,
-    styles[theme],
-    className
-  )
+  const classProps: string = classnames(styles.subtotal, styles[theme], className)
 
   const { basket } = useContext(BasketContext)
 
@@ -50,12 +41,14 @@ const Subtotal = (props: Props): React.Element<*> => {
         )}
         decimalScale={2}
         value={getBasketTotal(basket)}
-        displayType={'text'}
-        thousandSeparator={true}
-        prefix={'$'}
+        displayType="text"
+        thousandSeparator
+        prefix="$"
       />
 
-      <Button onClick={e => history.push('/payment')} size="small" theme="product">Proceed to checkout</Button>
+      <Button onClick={(e) => history.push('/payment')} size="small" theme="product">
+        Proceed to checkout
+      </Button>
     </div>
   )
 }

@@ -15,8 +15,7 @@ module.exports = (initialHtml = '', paths = DEFAULT_PATHS) =>
   <title>Amazon clone</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" media="all" href="${paths.styles.path}" integrity="${paths.styles
-    .sri}" />
+  <link rel="stylesheet" media="all" href="${paths.styles.path}" integrity="${paths.styles.sri}" />
 </head>
 <body>
   <div id="root"></div>  

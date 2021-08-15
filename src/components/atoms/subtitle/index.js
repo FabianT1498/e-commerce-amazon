@@ -10,16 +10,11 @@ type Props = {
 }
 
 const Subtitle = (props: Props): React.Element<*> => {
-  const { className, type } = props;
-  const classProps: string = classnames(
-    styles.subtitle,
-    className,
-    styles[type], 
-  )
+  const { className, type } = props
+  const classProps: string = classnames(styles.subtitle, className, styles[type])
 
-  return (<h2 className={classProps}>{props.children}</h2>)
+  return <h2 className={classProps}>{props.children}</h2>
 }
-
 
 Subtitle.defaultProps = {
   className: '',

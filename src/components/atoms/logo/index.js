@@ -1,7 +1,6 @@
 /* @flow */
 import * as React from 'react'
-
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 import styles from './style.css'
 
@@ -21,10 +20,7 @@ const Logo = (props: Props): React.Element<*> => {
 
   return (
     <Link to="/">
-      <img
-        className={styles[size]}
-        src={src}
-      /> 
+      <img className={styles[size]} src={src} />
     </Link>
   )
 }

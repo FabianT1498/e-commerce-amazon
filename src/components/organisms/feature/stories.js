@@ -2,10 +2,9 @@
 
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
 import Block from '_components/molecules/block'
 
-import Feature from './'
+import Feature from '.'
 
 storiesOf('Feature', module).add('default', () => (
   <Feature image="https://i.pinimg.com/originals/7e/d6/1a/7ed61a337b0cccb1598fe5fd1b9724bf.jpg">

@@ -13,7 +13,7 @@ export const ButtonType = {
 export const ButtonTheme = {
   DEFAULT: 'default',
   ROUNDED: 'rounded',
-  PRODUCT: 'product'
+  PRODUCT: 'product',
 }
 
 export const ButtonSize = {
@@ -23,7 +23,7 @@ export const ButtonSize = {
 }
 
 export const ButtonWidth = {
-  FULL: 'full'
+  FULL: 'full',
 }
 
 type Props = {
