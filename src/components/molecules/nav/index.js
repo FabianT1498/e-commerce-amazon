@@ -13,6 +13,8 @@ import { AuthContext } from '_context/auth/authContext'
 
 const Nav = (props: Props): React.Element<*> => {
 
+  const { onMouseEnter, onMouseLeave } = props;
+
   const { user } = useContext(AuthContext)
 
   const handleAuthentication = () => {
@@ -22,12 +24,20 @@ const Nav = (props: Props): React.Element<*> => {
   }
 
   return (
+    
     <nav className={classnames(styles.nav)}>
-      <NavItem to={!user && '/login'} linesText={[`Hello ${user ? user.email : 'Guest'}`, user ? 'Sign Out':'Sign In']} onClick={handleAuthentication}></NavItem>   
-      <NavItem to="/orders" linesText={['Return', '& Orders']}></NavItem>
-      <NavItem to="/account" linesText={['Your', 'Prime']}></NavItem>
-      <NavItemBasket to="/checkout"></NavItemBasket>      
+      <NavItem 
+        to={!user && '/login'} 
+        linesText={[`Hello ${user ? user.email : 'Guest'}`, user ? 'Sign Out':'Sign In']} 
+        onClick={handleAuthentication}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      /> 
+      <NavItem to="/orders" linesText={['Return', '& Orders']}/>
+      <NavItem to="/account" linesText={['Your', 'Prime']}/>
+      <NavItemBasket to="/checkout"/>     
     </nav>
+  
   )
 }
 

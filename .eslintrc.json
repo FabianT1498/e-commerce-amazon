@@ -1,7 +1,7 @@
 {
   "extends": [
     "plugin:flowtype/recommended",
-    "cheesecakelabs"
+    "cheesecakelabs/react"
   ],
   "plugins": [
     "flowtype"

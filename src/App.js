@@ -1,5 +1,5 @@
 // @Flow
-import {Component, Fragment, useEffect} from 'react'
+import {Component, Fragment } from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

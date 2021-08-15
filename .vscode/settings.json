@@ -1,5 +1,6 @@
 {
     "emmet.includeLanguages": {
-        "css": "postcss"
+        "javascript": "javascriptreact",
+        "postcss": "css"
     }
 }

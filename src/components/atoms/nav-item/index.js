@@ -11,14 +11,16 @@ type Props = {
   to: string,
   linesText: string[],
   onClick: Function,
+  onMouseEnter: Function,
+  onMouseLeave: Function,
   className: string,
 }
 
 const NavItem = (props: Props): React.Element<*> => {
-  const { linesText, to, onClick, children, className } = props
+  const { linesText, to, onClick, onMouseEnter, onMouseLeave, children, className } = props
 
   return (
-    <Link to={to} className={styles.item} onClick={onClick}>
+    <Link to={to} className={styles.item} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div>
         {linesText[0]}
       </div>

@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import classnames from 'classnames'
 import { Link } from "react-router-dom";
-import axios from "_app/axiosInstance";
+import axios from "_utilities/axiosInstance";
 
 import { BasketContext } from '_context/basket/basketContext'
 import { AuthContext } from '_context/auth/authContext'
