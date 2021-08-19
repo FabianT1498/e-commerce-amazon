@@ -1,17 +1,38 @@
+/* @flow */
+import React, { useContext } from 'react'
 import classnames from 'classnames'
+
+import { ModalContext } from '_context/modal/modalContext'
 
 import styles from './style.css'
 
-const Modal = ({ top, left, handleClose, show, children }) => {
-  const classProps: string = classnames(
-    styles.modal,
-    show ? styles['display-block'] : styles['display-none']
-  )
+type Props = {
+  top: string,
+  left: string,
+}
+
+const Modal = (props: Props) => {
+  const { top, left } = props
+  const classProps: string = classnames(styles.modal)
+  const { dispatch } = useContext(ModalContext)
+
+  const handleOnMouseEnter = () => dispatch({ type: 'SET_IS_HOVER', isHovered: true })
+  const handleOnMouseLeave = () => {
+    dispatch({ type: 'SET_IS_HOVER', isHovered: false })
+    dispatch({
+      type: 'REMOVE_MODAL',
+    })
+  }
 
   return (
     <div className={classProps}>
-      <section style={{ top, left }} className={styles['modal-main']}>
-        {children}
+      <section
+        style={{ top, left }}
+        className={styles['modal-main']}
+        onMouseEnter={handleOnMouseEnter}
+        onMouseLeave={handleOnMouseLeave}
+      >
+        Modal
       </section>
     </div>
   )

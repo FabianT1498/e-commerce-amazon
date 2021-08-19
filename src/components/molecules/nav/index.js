@@ -1,22 +1,40 @@
 /* @flow */
 import React, { useContext } from 'react'
 import classnames from 'classnames'
+
 import { auth } from '_app/firebase'
 import NavItem from '_components/atoms/nav-item'
 import NavItemBasket from '_components/atoms/nav-item-basket'
+import Modal from '_components/molecules/modal'
 import { AuthContext } from '_context/auth/authContext'
+import { ModalContext } from '_context/modal/modalContext'
 
 import styles from './style.css'
 
-const Nav = (props: Props): React.Element<*> => {
-  const { onMouseEnter, onMouseLeave } = props
-
+const Nav = (): React.Element<*> => {
   const { user } = useContext(AuthContext)
+  const { dispatch } = useContext(ModalContext)
 
   const handleAuthentication = () => {
     if (user) {
       auth.signOut()
     }
+  }
+
+  const handleOnMouseEnter = (component, props) => {
+    dispatch({
+      type: 'SHOW_MODAL',
+      component,
+      props,
+    })
+  }
+
+  const handleOnMouseLeave = () => {
+    setTimeout(() => {
+      dispatch({
+        type: 'REMOVE_MODAL',
+      })
+    }, 100)
   }
 
   return (
@@ -25,8 +43,13 @@ const Nav = (props: Props): React.Element<*> => {
         to={!user && '/login'}
         linesText={[`Hello ${user ? user.email : 'Guest'}`, user ? 'Sign Out' : 'Sign In']}
         onClick={handleAuthentication}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={() =>
+          handleOnMouseEnter(Modal, {
+            top: '-6.5px',
+            left: '300px',
+          })
+        }
+        onMouseLeave={handleOnMouseLeave}
       />
       <NavItem to="/orders" linesText={['Return', '& Orders']} />
       <NavItem to="/account" linesText={['Your', 'Prime']} />
