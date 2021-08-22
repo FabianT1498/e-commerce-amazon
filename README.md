@@ -8,7 +8,9 @@
 |`$ yarn storybook`| Start Storybook with the stories imported |
 |`$ yarn flow`| Validate the flow types |
 
-
+## Test credentials
+user: test2@test.com
+password: test123
 ## Libraries
 
 - Webpack
@@ -24,6 +26,7 @@
   - Nested
   - Variables
   - Inline SVG
+  - CSS Modules
 - Babel
   - Loader
   - Preset ES2015
@@ -34,4 +37,3 @@
 
 ### License
 MIT
-
