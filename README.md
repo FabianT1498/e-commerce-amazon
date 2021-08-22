@@ -10,7 +10,9 @@
 
 ## Test credentials
 user: test2@test.com
+
 password: test123
+
 ## Libraries
 
 - Webpack
