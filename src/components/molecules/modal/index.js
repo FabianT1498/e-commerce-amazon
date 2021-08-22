@@ -1,6 +1,5 @@
 /* @flow */
 import React, { useContext } from 'react'
-import classnames from 'classnames'
 
 import { ModalContext } from '_context/modal/modalContext'
 
@@ -9,11 +8,11 @@ import styles from './style.css'
 type Props = {
   top: string,
   left: string,
+  children: React.children,
 }
 
 const Modal = (props: Props) => {
-  const { top, left } = props
-  const classProps: string = classnames(styles.modal)
+  const { top, left, children } = props
   const { dispatch } = useContext(ModalContext)
 
   const handleOnMouseEnter = () => dispatch({ type: 'SET_IS_HOVER', isHovered: true })
@@ -25,15 +24,15 @@ const Modal = (props: Props) => {
   }
 
   return (
-    <div className={classProps}>
-      <section
+    <div className={styles.modal}>
+      <div
         style={{ top, left }}
         className={styles['modal-main']}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
       >
-        Modal
-      </section>
+        {children}
+      </div>
     </div>
   )
 }

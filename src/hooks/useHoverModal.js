@@ -18,7 +18,7 @@ const useHoverModal = () => {
       }
     }
 
-    return {}
+    return null
   }, [])
 
   return [ref, hovered]

@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { auth } from '_app/firebase'
 import NavItem from '_components/atoms/nav-item'
 import NavItemBasket from '_components/atoms/nav-item-basket'
-import Modal from '_components/molecules/modal'
+import AccountList from '_components/organisms/account-list'
 import { AuthContext } from '_context/auth/authContext'
 import { ModalContext } from '_context/modal/modalContext'
 
@@ -44,7 +44,7 @@ const Nav = (): React.Element<*> => {
         linesText={[`Hello ${user ? user.email : 'Guest'}`, user ? 'Sign Out' : 'Sign In']}
         onClick={handleAuthentication}
         onMouseEnter={() =>
-          handleOnMouseEnter(Modal, {
+          handleOnMouseEnter(AccountList, {
             top: '-6.5px',
             left: '300px',
           })

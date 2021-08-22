@@ -1,7 +1,6 @@
 // @Flow
 import React from 'react'
-import classnames from 'classnames'
-import { Link } from 'react-router-dom'
+
 import Logo from '_components/atoms/logo'
 import Title from '_components/atoms/title'
 import NavLink from '_components/atoms/nav-link'

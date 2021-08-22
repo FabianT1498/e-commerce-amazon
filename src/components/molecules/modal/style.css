@@ -9,8 +9,8 @@
   .modal-main {
     position: absolute;
     background: white;
-    width: 500px;
-    height: 500px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
 
     &::before {
       position: absolute;
@@ -23,12 +23,4 @@
       border-bottom: 10px solid #fff;
       content: "";
     }
-  }
-  
-  .display-block {
-    display: block;
-  }
-  
-  .display-none {
-    display: none;
   }
